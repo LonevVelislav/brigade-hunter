@@ -1,0 +1,548 @@
+html {
+  font-size: 18px;
+  overflow-x: hidden;
+  height: 100vh;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+}
+
+.game-area {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  background: rgb(31, 189, 114);
+  background: linear-gradient(
+    0deg,
+    rgba(31, 189, 114, 1) 46%,
+    rgba(31, 160, 189, 1) 46%,
+    rgba(163, 255, 250, 1) 83%
+  );
+}
+.game-over {
+  position: absolute;
+  width: 100%;
+  top: 100px;
+  z-index: 1;
+  background-color: black;
+  text-align: center;
+  padding: 30px;
+  border-radius: 5px;
+  color: whitesmoke;
+}
+
+.helth-border {
+  border: 1px solid grey;
+  position: fixed;
+  width: 200px;
+  height: 20px;
+  top: 5%;
+  left: 5%;
+  z-index: 999;
+}
+
+.helth {
+  height: 100%;
+  width: 100%;
+  background-color: greenyellow;
+}
+.helth-border-hag {
+  border: 1px solid #333;
+  position: fixed;
+  width: 400px;
+  height: 20px;
+  top: 5%;
+  left: 70%;
+  z-index: 999;
+}
+.helth-hag {
+  height: 100%;
+  width: 100%;
+  background-color: #d9480f;
+}
+.icon-dog {
+  position: relative;
+  width: 80px;
+  border: 2px solid grey;
+}
+.cooldown {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: grey;
+  opacity: 0.7;
+}
+.icon-dog img {
+  width: 100%;
+  display: block;
+}
+
+.grass {
+  margin: 0 auto;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grass-element {
+  width: 100%;
+  object-fit: cover;
+  height: 200px;
+}
+
+.grass-line-0 {
+  top: 40%;
+}
+.grass-line-1 {
+  top: 45%;
+  z-index: 2;
+}
+
+.grass-line-2 {
+  top: 55%;
+  z-index: 3;
+}
+
+.grass-line-3 {
+  top: 65%;
+  z-index: 4;
+}
+
+.grass-line-4 {
+  top: 75%;
+  z-index: 5;
+}
+
+.grass-line-5 {
+  top: 85%;
+  z-index: 6;
+}
+
+.grass-line-6 {
+  top: 95%;
+  z-index: 7;
+}
+.decor-line-1 {
+  top: 42%;
+  z-index: 2;
+}
+.decor-line-2 {
+  top: 52%;
+  z-index: 3;
+}
+.decor-line-3 {
+  top: 62%;
+  z-index: 4;
+}
+.decor-line-4 {
+  top: 72%;
+  z-index: 5;
+}
+.decor-line-5 {
+  top: 82%;
+  z-index: 6;
+}
+
+.game-start {
+  position: fixed;
+  width: 200px;
+  background-color: greenyellow;
+  border-radius: 30px;
+  top: 100px;
+  right: 50%;
+  transform: translate(50%);
+  z-index: 1;
+  text-align: center;
+  padding: 30px;
+  cursor: pointer;
+}
+
+.game-score {
+  background-color: black;
+  color: whitesmoke;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  top: 0%;
+  z-index: 2;
+}
+
+.hidden {
+  display: none;
+}
+
+.hunter {
+  position: absolute;
+  width: 150px;
+  height: 220px;
+  background-image: url(./images/Brigand-hunter.webp);
+  background-size: cover;
+  z-index: 2;
+  animation: walk 1s linear infinite;
+}
+.dog {
+  position: absolute;
+  width: 230px;
+  height: 170px;
+  background-image: url(./images/Houndmaster_guard.webp);
+  background-size: cover;
+  z-index: 1;
+  animation: walk 1s linear infinite;
+}
+.landed-dog {
+  position: absolute;
+  width: 240px;
+  height: 180px;
+  background-image: url(./images/Houndmaster_point.webp);
+  background-size: cover;
+}
+@keyframes walk {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.hunter-fire {
+  background-image: url(./images/Brigand_Hunter.webp);
+  background-size: cover;
+}
+.bullet {
+  position: absolute;
+  width: 70px;
+  height: 30px;
+  background-image: url(./images/oie_wNF8I44fd4BY-removebg-preview.png);
+  background-size: 99%;
+  background-repeat: no-repeat;
+  z-index: 900;
+}
+.dog-attack {
+  position: absolute;
+  width: 230px;
+  height: 170px;
+  background-image: url(./images/Houndmaster_rush.webp);
+  background-size: cover;
+}
+
+.hunter-dog-attack {
+  background-image: url(./images/Hunter_Defend.webp);
+  background-size: cover;
+}
+
+.hunter-jump {
+  background-image: url(./images/Hunter_Defend.webp);
+  background-size: cover;
+}
+.tree {
+  position: absolute;
+  width: 550px;
+  height: 600px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+.cloud {
+  z-index: 0;
+  position: absolute;
+  width: 230px;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.dog-enemie {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-image: url(./images/Rabid-gnasher.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotateY(180deg);
+}
+.dog-enemie-attack {
+  width: 250px;
+  height: 250px;
+  background-image: url(./images/Rabid_dog_attack.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotateY(180deg);
+}
+.witch {
+  position: absolute;
+  width: 125px;
+  height: 250px;
+  background-image: url(./images/Hateful-virago.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotateY(180deg);
+}
+
+.swine {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-image: url(./images/Swine-chopper.webp);
+  background-size: cover;
+  transform: rotateY(180deg);
+}
+.swine-hit {
+  width: 300px;
+  height: 400px;
+  background-image: url(./images/Swine_reaver_defend.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotateY(180deg);
+}
+.swine-attack {
+  width: 625px;
+  background-image: url(./images/Swine_reaver_ranged-overlay.png);
+  background-size: cover;
+  transform: rotateY(180deg);
+}
+
+.dead {
+  position: absolute;
+  width: 140px;
+  height: 70px;
+  background-image: url(./images/Rabble_Dead.webp);
+  background-size: cover;
+}
+.deadSwine {
+  background-image: url(./images/Swine_reaver_dead.webp);
+  background-size: cover;
+  height: 150px;
+  width: 200px;
+}
+.deadCentaur {
+  background-image: url(./images/Swinetaur_dead.webp);
+  background-size: cover;
+  width: 300px;
+  height: 200px;
+}
+.spear-broken {
+  background-image: url(./images/brokenspear.png);
+  background-size: cover;
+  width: 150px;
+  height: 150px;
+}
+.archer {
+  position: absolute;
+  width: 125px;
+  height: 250px;
+  background-image: url(./images/Swine-skiver.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotateY(180deg);
+}
+.archer-attack {
+  width: 250px;
+  background-image: url(./images/Skiver_Throw.webp);
+  background-size: cover;
+
+  transform: rotateY(180deg);
+}
+.spear {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background-image: url(./images/image-343196-removebg-preview.png);
+  background-size: cover;
+  transform: rotate(49deg);
+}
+
+.centaur {
+  position: absolute;
+  width: 385px;
+  height: 300px;
+  background-image: url(./images/Swinetaur.webp);
+  background-size: cover;
+  transform: rotateY(180deg);
+}
+.centaur-charge {
+  width: 525px;
+  background-image: url(./images/Swinetaur_charge.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotateY(180deg);
+}
+.centaur-hit {
+  width: 385px;
+  background-image: url(./images/SwinetaurDefend.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotateY(180deg);
+}
+
+.line_1 {
+  position: absolute;
+  width: 100%;
+  border: 1px dashed #333;
+  top: 65%;
+  z-index: 999;
+}
+
+.line_2 {
+  position: absolute;
+  width: 100%;
+  border: 1px dashed #333;
+  top: 75%;
+  z-index: 999;
+}
+.line_3 {
+  position: absolute;
+  width: 100%;
+  border: 1px dashed #333;
+  top: 85%;
+  z-index: 999;
+}
+.line_4 {
+  position: absolute;
+  width: 100%;
+  border: 1px dashed #333;
+  top: 95%;
+  z-index: 999;
+}
+
+.bullet-impact {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  background-image: url(./images/png-clipart-sprite-explosion-computer-graphics-8-bit-sprite-game-text-removebg-preview.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: height 1s;
+  z-index: 999;
+}
+
+.hag {
+  width: 255px;
+  height: 400px;
+  position: absolute;
+  background-image: url(./images/Hag.webp);
+  background-size: cover;
+  transform: rotateY(180deg);
+}
+
+.hag-fireball {
+  width: 345px;
+  background-image: url(./images/Hag_season.webp);
+  background-size: cover;
+  transform: rotateY(180deg);
+}
+
+.hag-melle {
+  width: 460px;
+  background-image: url(./images/Hag_tenderize.webp);
+  background-size: cover;
+  transform: rotateY(180deg);
+}
+
+.couldron {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-image: url(./images/Cauldron-full-optimized.webp);
+  background-size: cover;
+}
+
+.fire-ball {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-image: url(./images/images-removebg-preview.png);
+  background-size: 99%;
+  background-repeat: no-repeat;
+  transform: rotateY(180deg);
+}
+
+.thunderbolt {
+  position: absolute;
+  width: 200px;
+  height: 550px;
+  background-image: url(./images/thunder-overlay.png);
+  background-size: cover;
+  z-index: 999;
+}
+
+.indicator {
+  position: absolute;
+  width: 200px;
+  box-shadow: 0px 0px 40px 20px #0ff;
+  z-index: 999;
+}
+
+.player-hit {
+  animation: hit 0.5s linear infinite;
+}
+@keyframes hit {
+  0% {
+    transform: translateX(0);
+    filter: contrast(15%);
+  }
+  80% {
+    transform: translateX(0);
+  }
+  85% {
+    transform: translate(5px);
+  }
+  95% {
+    transform: translate(-5px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.flex p {
+  margin-bottom: 10px;
+}
+.flex p span {
+  color: #d9480f;
+}
+.new-game {
+  background-color: #333;
+  color: whitesmoke;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: all 1s;
+}
+.new-game:hover {
+  background-color: #ccc;
+}
+.controls {
+  padding: 10px 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+
+  background-color: #ccc;
+  z-index: 1000;
+}
+footer {
+  position: fixed;
+  z-index: 1000;
+  color: black;
+  bottom: 1%;
+}

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Brigade-Hunter is JavaScrypt powered game with a simple level that gets harder the more points you get. Created by Velislav Lonev."
+    />
+    <link rel="icon" href="icons/Houndmaster_guard-removebg-preview1.jpg" />
+    <link
+      rel="apple-touch-icon"
+      href="icons/Houndmaster_guard-removebg-preview2.jpg"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="./main.js"></script>
+    <title>Brigade-Hunter</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="helth-border hidden">
+        <div class="helth"></div>
+        <div class="flex">
+          <div class="icon-dog">
+            <img src="./images/Hound_Master.webp" alt="dog" />
+            <div class="cooldown"></div>
+          </div>
+        </div>
+      </div>
+      <div class="helth-border-hag hidden">
+        <div class="helth-hag"></div>
+      </div>
+      <div class="game-start">Play!</div>
+      <div class="game-score"><span>0</span> pts</div>
+      <div class="game-area">
+        <div class="controls">
+          <div class="flex">
+            <p>Go up: <span>&#8593;</span></p>
+            <p>Go down: <span>&#8595;</span></p>
+            <p>Go right: <span>&#8594;</span></p>
+            <p>Go left: <span>&#8592;</span></p>
+            <p>Jump: <span>Space</span></p>
+            <p>Shoot: <span>W</span></p>
+            <p>Dog Attack: <span>E</span></p>
+          </div>
+        </div>
+        <div class="grass grass-line-0">
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+        </div>
+        <div class="grass grass-line-1" archer="0" line="1">
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+        </div>
+        <div class="line_1"></div>
+        <div class="grass decor-line-1">
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+        </div>
+
+        <div class="grass grass-line-2" archer="0" line="2">
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+        </div>
+        <div class="line_2"></div>
+        <div class="grass decor-line-2">
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+        </div>
+        <div class="grass grass-line-3" archer="0" line="3">
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+        </div>
+        <div class="line_3"></div>
+        <div class="grass decor-line-3">
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+        </div>
+        <div class="grass grass-line-4" archer="0" line="4">
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+        </div>
+        <div class="line_4"></div>
+        <div class="grass decor-line-4">
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+        </div>
+        <div class="grass grass-line-5">
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+        </div>
+        <div class="grass decor-line-5">
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+        </div>
+
+        <div class="grass grass-line-6">
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+          <img
+            class="grass-element"
+            src="./images/Lovepik_com-401444151-grassy-grass.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="game-over hidden">
+        <div class="flex">
+          <div class="text">Game Over</div>
+          <div class="score">Score: <span class="endScore"></span></div>
+          <button class="new-game">Play again!</button>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>Created by Velislav Lonev.</p>
+      <p>Images belong to Red Hook Studios &reg;</p>
+    </footer>
+  </body>
+</html>
